@@ -16,8 +16,8 @@ async function parse(eventRecord) {
     return Promise.resolve(eventRecord.body);
   }
 
-  const bucket = eventRecord.MessageAttributes[pubSubBucket].StringValue;
-  const key = eventRecord.MessageAttributes[pubSubKey].StringValue;
+  const bucket = eventRecord.messageAttributes[pubSubBucket].stringValue;
+  const key = eventRecord.messageAttributes[pubSubKey].stringValue;
 
   const params = { Bucket: bucket, Key: key };
 
