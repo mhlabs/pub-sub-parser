@@ -18,3 +18,10 @@ describe('s3 params', () => {
     expect(params.Key).toBe('s3-key');
   });
 });
+
+describe('convert data', () => {
+  it('should convert data as string', () => {
+    const data = tested.convertData(Buffer.from([65, 66, 67]));
+    expect(data).toBe('ABC');
+  });
+});

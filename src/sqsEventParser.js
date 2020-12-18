@@ -22,6 +22,9 @@ function getS3Params(eventRecord) {
   return { Bucket: bucket, Key: key };
 }
 
+function convertData(data) {
+  return data.toString('utf-8');
+}
 async function parse(eventRecord) {
   if (!shouldDownload(eventRecord)) return Promise.resolve(eventRecord.body);
 
@@ -30,13 +33,14 @@ async function parse(eventRecord) {
   try {
     const data = await s3.getObject(params).promise();
     const dataBuffer = data.Body;
-    return dataBuffer;
+    return convertData(dataBuffer);
   } catch (e) {
     throw new Error(`Could not retrieve file from S3: ${e.message}`);
   }
 }
 
 module.exports = {
+  convertData,
   getS3Params,
   parse,
   shouldDownload
