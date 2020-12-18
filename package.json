@@ -1,0 +1,39 @@
+{
+  "name": "@mhlabs/pub-sub-parser",
+  "version": "1.0.0",
+  "description": "A package for logging to console in a structured format",
+  "main": "index.js",
+  "jest": {
+    "collectCoverage": false,
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
+  },
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "prepublishOnly": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhlabs/pub-sub-parser.git"
+  },
+  "author": "mhdev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mhlabs/pub-sub-parser/issues"
+  },
+  "homepage": "https://github.com/mhlabs/pub-sub-parser#readme",
+  "devDependencies": {
+    "aws-sdk": "^2.813.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "14.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jest": "23.6.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "jest": "^25.1.0",
+    "prettier": "^1.19.1"
+  },
+  "dependencies": {}
+}
