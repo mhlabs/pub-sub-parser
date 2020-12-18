@@ -20,8 +20,17 @@ describe('s3 params', () => {
 });
 
 describe('convert data', () => {
-  it('should convert data as string', () => {
-    const data = tested.convertData(Buffer.from([65, 66, 67]));
-    expect(data).toBe('ABC');
+  it('should convert data as string and return Message property', () => {
+    const messageObject = {
+      Id: 1,
+      Message: {
+        Name: 'x'
+      }
+    };
+
+    const buffer = Buffer.from(JSON.stringify(messageObject), 'utf8');
+    const data = tested.convertResponse(buffer);
+
+    expect(data.Name).toBe('x');
   });
 });
