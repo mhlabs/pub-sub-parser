@@ -1,0 +1,30 @@
+{
+  "messageId": "1234",
+  "receiptHandle": "xyz",
+  "body": "#",
+  "attributes": {
+    "ApproximateReceiveCount": "2",
+    "SentTimestamp": "1608291641600",
+    "SenderId": "x",
+    "ApproximateFirstReceiveTimestamp": "1608291641601"
+  },
+  "messageAttributes": {
+    "PubSub_S3Bucket": {
+      "stringValue": "s3-bucket",
+      "stringListValues": [],
+      "binaryListValues": [],
+      "dataType": "String"
+    },
+    "PubSub_S3Key": {
+      "stringValue": "s3-key",
+      "stringListValues": [],
+      "binaryListValues": [],
+      "dataType": "String"
+    }
+  },
+  "md5OfMessageAttributes": "x",
+  "md5OfBody": "x",
+  "eventSource": "aws:sqs",
+  "eventSourceARN": "arn",
+  "awsRegion": "region"
+}
