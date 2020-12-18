@@ -25,11 +25,7 @@ function getS3Params(eventRecord) {
 async function parse(eventRecord) {
   if (!shouldDownload(eventRecord)) return Promise.resolve(eventRecord.body);
 
-  if (!eventRecord.messageAttributes[pubSubBucket]) {
-    return Promise.resolve(eventRecord.body);
-  }
-
-  const params = getS3Params();
+  const params = getS3Params(eventRecord);
 
   try {
     const data = await s3.getObject(params).promise();
